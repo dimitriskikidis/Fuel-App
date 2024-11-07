@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/signInFragment">
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.dimitriskikidis.admin.fuelapp.presentation.signin.SignInFragment"
+        android:label="Sign In - Admin"
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.dimitriskikidis.admin.fuelapp.presentation.signup.SignUpFragment"
+        android:label="Sign Up - Admin"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUpFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="com.dimitriskikidis.admin.fuelapp.presentation.mainmenu.MainMenuFragment"
+        android:label="Main Menu"
+        tools:layout="@layout/fragment_main_menu">
+        <action
+            android:id="@+id/action_mainMenuFragment_to_brandListFragment"
+            app:destination="@id/brandListFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_fuelTypeListFragment"
+            app:destination="@id/fuelTypeListFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_brandFuelListFragment"
+            app:destination="@id/brandFuelListFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/brandListFragment"
+        android:name="com.dimitriskikidis.admin.fuelapp.presentation.brandlist.BrandListFragment"
+        android:label="Brands"
+        tools:layout="@layout/fragment_brand_list">
+        <action
+            android:id="@+id/action_brandListFragment_to_addEditBrandFragment"
+            app:destination="@id/addEditBrandFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fuelTypeListFragment"
+        android:name="com.dimitriskikidis.admin.fuelapp.presentation.fueltypelist.FuelTypeListFragment"
+        android:label="Fuel Types"
+        tools:layout="@layout/fragment_fuel_type_list" >
+        <action
+            android:id="@+id/action_fuelTypeListFragment_to_addEditFuelTypeFragment"
+            app:destination="@id/addEditFuelTypeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditBrandFragment"
+        android:name="com.dimitriskikidis.admin.fuelapp.presentation.addeditbrand.AddEditBrandFragment"
+        tools:layout="@layout/fragment_add_edit_brand" />
+    <action
+        android:id="@+id/action_global_signInFragment"
+        app:destination="@id/signInFragment"
+        app:popUpTo="@id/nav_graph"
+        app:popUpToInclusive="false" />
+    <fragment
+        android:id="@+id/addEditFuelTypeFragment"
+        android:name="com.dimitriskikidis.admin.fuelapp.presentation.addeditfueltype.AddEditFuelTypeFragment"
+        tools:layout="@layout/fragment_add_edit_fuel_type" />
+    <fragment
+        android:id="@+id/brandFuelListFragment"
+        android:name="com.dimitriskikidis.admin.fuelapp.presentation.brandfuellist.BrandFuelListFragment"
+        android:label="Brand Fuels"
+        tools:layout="@layout/fragment_brand_fuel_list" >
+        <action
+            android:id="@+id/action_brandFuelListFragment_to_editBrandFuelFragment"
+            app:destination="@id/editBrandFuelFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editBrandFuelFragment"
+        android:name="com.dimitriskikidis.admin.fuelapp.presentation.editbrandfuel.EditBrandFuelFragment"
+        android:label="Edit Brand Fuel"
+        tools:layout="@layout/fragment_edit_brand_fuel" />
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.dimitriskikidis.admin.fuelapp.presentation.account.AccountFragment"
+        android:label="Account"
+        tools:layout="@layout/fragment_account" />
+</navigation>

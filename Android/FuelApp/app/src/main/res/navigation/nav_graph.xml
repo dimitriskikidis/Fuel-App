@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/signInFragment">
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.dimitriskikidis.fuelapp.presentation.signin.SignInFragment"
+        android:label="Sign In"
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_signInFragment_to_main_nav_graph"
+            app:destination="@id/main_nav_graph" />
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.dimitriskikidis.fuelapp.presentation.signup.SignUpFragment"
+        android:label="Sign Up"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUpFragment_to_main_nav_graph"
+            app:destination="@id/main_nav_graph" />
+    </fragment>
+
+    <navigation
+        android:id="@+id/main_nav_graph"
+        app:startDestination="@id/loadingFragment">
+
+        <fragment
+            android:id="@+id/settingsFragment"
+            android:name="com.dimitriskikidis.fuelapp.presentation.settings.SettingsFragment"
+            android:label="Settings" />
+        <fragment
+            android:id="@+id/accountFragment"
+            android:name="com.dimitriskikidis.fuelapp.presentation.account.AccountFragment"
+            android:label="Account"
+            tools:layout="@layout/fragment_account" >
+            <action
+                android:id="@+id/action_accountFragment_to_userReviewListFragment"
+                app:destination="@id/userReviewListFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/fuelListFragment"
+            android:name="com.dimitriskikidis.fuelapp.presentation.fuellist.FuelListFragment"
+            android:label="Fuels"
+            tools:layout="@layout/fragment_fuel_list" >
+            <action
+                android:id="@+id/action_fuelListFragment_to_fuelStationDetailsFragment"
+                app:destination="@id/fuelStationDetailsFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/mapFragment"
+            android:name="com.dimitriskikidis.fuelapp.presentation.map.MapFragment"
+            android:label="Map"
+            tools:layout="@layout/fragment_map">
+            <action
+                android:id="@+id/action_mapFragment_to_fuelStationDetailsFragment"
+                app:destination="@id/fuelStationDetailsFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/fuelStationDetailsFragment"
+            android:name="com.dimitriskikidis.fuelapp.presentation.fuelstationdetails.FuelStationDetailsFragment"
+            android:label="Fuel Station"
+            tools:layout="@layout/fragment_fuel_station_details">
+            <action
+                android:id="@+id/action_fuelStationDetailsFragment_to_reviewListFragment"
+                app:destination="@id/reviewListFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/reviewListFragment"
+            android:name="com.dimitriskikidis.fuelapp.presentation.reviewlist.ReviewListFragment"
+            android:label="Reviews"
+            tools:layout="@layout/fragment_review_list">
+            <action
+                android:id="@+id/action_reviewListFragment_to_addEditReviewFragment"
+                app:destination="@id/addEditReviewFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/addEditReviewFragment"
+            android:name="com.dimitriskikidis.fuelapp.presentation.addeditreview.AddEditReviewFragment"
+            tools:layout="@layout/fragment_add_edit_review" />
+        <action
+            android:id="@+id/action_global_mapFragment"
+            app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_global_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_global_fuelListFragment"
+            app:destination="@id/fuelListFragment" />
+        <action
+            android:id="@+id/action_global_accountFragment"
+            app:destination="@id/accountFragment" />
+        <fragment
+            android:id="@+id/userReviewListFragment"
+            android:name="com.dimitriskikidis.fuelapp.presentation.userreviewlist.UserReviewListFragment"
+            android:label="Reviews"
+            tools:layout="@layout/fragment_user_review_list" >
+            <action
+                android:id="@+id/action_userReviewListFragment_to_addEditReviewFragment"
+                app:destination="@id/addEditReviewFragment" />
+            <action
+                android:id="@+id/action_userReviewListFragment_to_fuelStationDetailsFragment"
+                app:destination="@id/fuelStationDetailsFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/loadingFragment"
+            android:name="com.dimitriskikidis.fuelapp.presentation.loading.LoadingFragment"
+            tools:layout="@layout/fragment_loading" >
+            <action
+                android:id="@+id/action_loadingFragment_to_mapFragment"
+                app:destination="@id/mapFragment" />
+        </fragment>
+    </navigation>
+
+    <action
+        android:id="@+id/action_global_signInFragment"
+        app:destination="@id/signInFragment"
+        app:popUpTo="@id/nav_graph"
+        app:popUpToInclusive="false" />
+</navigation>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/signInFragment">
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.dimitriskikidis.owner.fuelapp.presentation.signin.SignInFragment"
+        android:label="Sign In - Owner"
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.dimitriskikidis.owner.fuelapp.presentation.signup.SignUpFragment"
+        android:label="Sign Up - Owner"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUpFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editFuelStationFragment"
+        android:name="com.dimitriskikidis.owner.fuelapp.presentation.editfuelstation.EditFuelStationFragment"
+        android:label="Fuel Station"
+        tools:layout="@layout/fragment_edit_fuel_station">
+        <action
+            android:id="@+id/action_editFuelStationFragment_to_pickLocationFragment"
+            app:destination="@id/pickLocationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pickLocationFragment"
+        android:name="com.dimitriskikidis.owner.fuelapp.presentation.picklocation.PickLocationFragment"
+        android:label="Set Location"
+        tools:layout="@layout/fragment_pick_location" />
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="com.dimitriskikidis.owner.fuelapp.presentation.mainmenu.MainMenuFragment"
+        android:label="Main Menu"
+        tools:layout="@layout/fragment_main_menu">
+        <action
+            android:id="@+id/action_mainMenuFragment_to_editFuelStationFragment"
+            app:destination="@id/editFuelStationFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_fuelListFragment"
+            app:destination="@id/fuelListFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_reviewListFragment"
+            app:destination="@id/reviewListFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fuelListFragment"
+        android:name="com.dimitriskikidis.owner.fuelapp.presentation.fuellist.FuelListFragment"
+        android:label="Fuels"
+        tools:layout="@layout/fragment_fuel_list">
+        <action
+            android:id="@+id/action_fuelListFragment_to_addFuelFragment"
+            app:destination="@id/addFuelFragment" />
+        <action
+            android:id="@+id/action_fuelListFragment_to_editFuelFragment"
+            app:destination="@id/editFuelFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFuelFragment"
+        android:name="com.dimitriskikidis.owner.fuelapp.presentation.addfuel.AddFuelFragment"
+        android:label="Add Fuel"
+        tools:layout="@layout/fragment_add_fuel" />
+    <fragment
+        android:id="@+id/editFuelFragment"
+        android:name="com.dimitriskikidis.owner.fuelapp.presentation.editfuel.EditFuelFragment"
+        android:label="Edit Fuel"
+        tools:layout="@layout/fragment_edit_fuel" />
+    <action
+        android:id="@+id/action_global_signInFragment"
+        app:destination="@id/signInFragment"
+        app:popUpTo="@id/nav_graph"
+        app:popUpToInclusive="false" />
+    <fragment
+        android:id="@+id/reviewListFragment"
+        android:name="com.dimitriskikidis.owner.fuelapp.presentation.reviewlist.ReviewListFragment"
+        android:label="Reviews"
+        tools:layout="@layout/fragment_review_list" />
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.dimitriskikidis.owner.fuelapp.presentation.account.AccountFragment"
+        android:label="Account"
+        tools:layout="@layout/fragment_account" />
+</navigation>

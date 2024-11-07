@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".presentation.mainmenu.MainMenuFragment">
+
+    <Button
+        android:id="@+id/btn_account"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="start|center_vertical"
+        android:text="Account"
+        android:textAllCaps="false"
+        app:icon="@drawable/ic_arrow_forward"
+        app:iconGravity="end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="?attr/colorPrimary" />
+
+    <Button
+        android:id="@+id/btn_edit_fuel_station"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:gravity="start|center_vertical"
+        android:text="Fuel station"
+        android:textAllCaps="false"
+        app:icon="@drawable/ic_arrow_forward"
+        app:iconGravity="end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_account"
+        app:strokeColor="?attr/colorPrimary" />
+
+    <Button
+        android:id="@+id/btn_fuels"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:gravity="start|center_vertical"
+        android:text="Fuels"
+        android:textAllCaps="false"
+        app:icon="@drawable/ic_arrow_forward"
+        app:iconGravity="end"
+        app:layout_constraintEnd_toEndOf="@id/btn_edit_fuel_station"
+        app:layout_constraintStart_toStartOf="@id/btn_edit_fuel_station"
+        app:layout_constraintTop_toBottomOf="@id/btn_edit_fuel_station"
+        app:strokeColor="?attr/colorPrimary" />
+
+    <Button
+        android:id="@+id/btn_reviews"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:gravity="start|center_vertical"
+        android:text="Reviews"
+        android:textAllCaps="false"
+        app:icon="@drawable/ic_arrow_forward"
+        app:iconGravity="end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_fuels"
+        app:strokeColor="?attr/colorPrimary" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
